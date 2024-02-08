@@ -53,9 +53,9 @@ nav a {
 /*Header Styles*/
 .header {
     background-color: #FFF8F3;
-    background-image: url(../images/header_bg.png);
+    background-image: url(../images/header_bg.png), url(../images/developer.png);
     background-repeat: no-repeat;
-    background-position: bottom right;
+    background-position: bottom right, top left;
 }
 
 /*banner styles*/
@@ -214,12 +214,14 @@ footer {
 .footer-column {
     width: 50%;
 }
-.social-links a{
+
+.social-links a {
     margin-right: 24px;
 }
 
 /*form style*/
-.contact input[type="text"], .contact input[type="email"],
+.contact input[type="text"],
+.contact input[type="email"],
 textarea {
     display: block;
     margin-bottom: 25px;
@@ -230,21 +232,61 @@ textarea {
     border: 0px;
     width: 100%;
 }
+
 /*Responsive Styles*/
 
 /*Mobile Devices*/
-.hide{
+.hide {
     display: none;
 }
-@media  screen and (max-width:576px) {
-    .skills-container{
+
+@media screen and (max-width:576px) {
+    .header{
+        background-image: none;
+    }
+    nav, 
+    nav > ul,
+    .banner,
+    .skills-container,
+    .resume-container,
+    .about-info-container,
+    footer {
         flex-direction: column;
     }
+    nav > ul {
+        gap: 10px;
+    }
+    .banner,
     #what-i-do-description{
         padding: 20px;
     }
-    .resume-container{
-        flex-direction: column;
-        padding: 20px;
+    #about {
+        padding: 10px;
+    }
+    footer {
+        padding: 10px;
+    }
+    .footer-column {
+        width: 100%;
+    }
+    .contact input[type="text"], .contact input[type="email"],
+    textarea {
+        width: 70%;
+    }
+    .info-description {
+        text-align: center;
+    }
+    .banner .profile-pic{
+        width: 100%;
+    }
+    .btn-primary {
+        margin-bottom: 15px;
+    }
+}
+/* This is for medium device*/
+
+@media screen and (min-width:576px) and (max-width:960) {
+    footer { 
+        padding: 30px;
     }
 }
